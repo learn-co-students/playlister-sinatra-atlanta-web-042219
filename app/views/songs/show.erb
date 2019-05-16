@@ -1,0 +1,16 @@
+<%if Song.all.last == @song%>
+	<h3 color="blue">Successfully created song.</h3>
+<% end %>
+
+"Successfully updated song."
+
+<h1>"<%= @song.name %>" by <a href="/artists/<%= @song.artist.slug %>"><%= @song.artist.name %></a></h1>
+
+<h3>Genres</h3>
+<ul>
+	<% @song.genres.each do |genre|%>
+		<li><a href="/genres/<%= genre.slug %>"><%= genre.name %></a></li>
+	<% end %>
+</ul><br>
+
+<a href="/songs">Back to all songs</a>
